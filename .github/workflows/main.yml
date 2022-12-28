@@ -50,4 +50,6 @@ jobs:
     - name: Gradle per
       run:  chmod +x ./src/submodule/gradlew 
     - name: Run build with Gradle Wrapper
+      run: ./src/submodule/./gradlew init
+    - name: Run build with Gradle Wrapper
       run: ./src/submodule/./gradlew build
