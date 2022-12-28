@@ -51,5 +51,13 @@ jobs:
       run:  chmod +x ./src/submodule/gradlew 
     - name: gradle init
       run: ./src/submodule/./gradlew init
-    - name: Run build with Gradle Wrapper
-      run: ./src/submodule/./gradlew clean test
+    - name: Run build test
+      run: |
+        cd ./src/submodule
+        ./gradlew test
+    - name: Run build
+      run: |
+        cd ./src/submodule
+        ./gradlew build
+        
+      
