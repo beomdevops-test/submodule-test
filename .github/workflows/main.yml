@@ -23,9 +23,11 @@ jobs:
       with:
         repository: beomdevops-test/subrepo
         token:  ${{ secrets.TOKEN }}
-        path: confg
+        path: config
     - name: check repo
       run: pwd
+    - name: check repo
+      run: ls
     - name: check src
       run: ls ./src
     - name: check config
