@@ -18,9 +18,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: beomdevops-test/submodule
+        repository: beomdevops-test/subrepo
         token:  ${{ secrets.TOKEN }}
-        path: ./submodule/
     - name: check repo
       run: ls
     - name: check repo
