@@ -20,6 +20,7 @@ jobs:
       with:
         repository: beomdevops-test/subrepo
         token:  ${{ secrets.TOKEN }}
+        path: my-confg
     - name: check repo
       run: pwd
     - name: check repo
