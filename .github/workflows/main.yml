@@ -20,6 +20,10 @@ jobs:
       with:
         repository: beomdevops-test/subrepo
         token:  ${{ secrets.TOKEN }}
+    - name: check repo
+      run: pwd
+    - name: check repo
+      run: ls
     - uses: actions/checkout@v2
     - name: check repo
       run: pwd
