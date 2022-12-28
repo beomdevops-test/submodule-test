@@ -30,6 +30,8 @@ jobs:
       run: ls
     - name: check src
       run: ls ./src
+    - name: check src
+      run: ls ./src/submodule
     - name: check config
       run: ls ./config
     - name: copy spring config
