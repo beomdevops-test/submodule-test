@@ -49,5 +49,7 @@ jobs:
       uses: gradle/gradle-build-action@v2
     - name: Gradle per
       run:  chmod +x ./src/submodule/gradlew 
+    - name: gradle init
+      run: ./src/submodule/./gradlew init
     - name: Run build with Gradle Wrapper
       run: ./src/submodule/./gradlew test
