@@ -52,4 +52,4 @@ jobs:
     - name: gradle init
       run: ./src/submodule/./gradlew init
     - name: Run build with Gradle Wrapper
-      run: ./src/submodule/./gradlew test
+      run: ./src/submodule/./gradlew clean test
