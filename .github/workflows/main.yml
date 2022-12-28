@@ -39,6 +39,6 @@ jobs:
     - name: Build with Gradle
       uses: gradle/gradle-build-action@v2
     - name: Gradle per
-      run:  chmod +x gradlew ./submodule/
+      run:  chmod +x gradlew ./submodule
     - name: Run build with Gradle Wrapper
       run: ./submodule/./gradlew test
