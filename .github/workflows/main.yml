@@ -1,0 +1,53 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+# This workflow will build a package using Gradle and then publish it to GitHub packages when a release is created
+# For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#Publishing-using-gradle
+
+name: Gradle Package
+
+on:
+   push:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        path: src
+    - uses: actions/checkout@v3
+      with:
+        repository: beomdevops-test/subrepo
+        token:  ${{ secrets.TOKEN }}
+        path: config
+    - name: check repo
+      run: pwd
+    - name: check repo
+      run: ls
+    - name: check src
+      run: ls ./src
+    - name: check src
+      run: ls ./src/submodule
+    - name: check config
+      run: ls ./config
+    - name: copy spring config
+      run: cp ./config/application.yml ./src/submodule/src/main/resources/application.yml
+    - name: check spring config
+      run: ls ./src/submodule/src/main/resources
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+        server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
+        settings-path: ${{ github.workspace }} # location for the settings.xml file
+    - name: Build with Gradle
+      uses: gradle/gradle-build-action@v2
+    - name: Gradle per
+      run:  chmod +x ./src/submodule/gradlew 
+    - name: Run build with Gradle Wrapper
+      run: ./src/submodule/./gradlew build
