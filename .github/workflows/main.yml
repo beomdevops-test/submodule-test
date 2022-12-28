@@ -18,7 +18,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        submodules: true
+        repository: beomdevops-test/subrepo
         token:  ${{ secrets.TOKEN }}
     - name: check repo
       run: pwd
