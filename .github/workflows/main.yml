@@ -23,7 +23,6 @@ jobs:
       with:
         repository: beomdevops-test/submodule
         token:  ${{ secrets.TOKEN }}
-        path: ./
     - name: check repo
       run: ls
     - name: Set up JDK 11
